@@ -1,0 +1,75 @@
+h1 {
+	position: relative;
+	padding: .25em 0 .5em .75em;
+	border-left: 6px solid #3498db;
+	border-bottom: 6px solid #3498db;
+}
+h1::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	height: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+h2 {
+	position: relative;
+	padding: .25em 0 .5em .75em;
+	border-left: 6px solid #3498db;
+}
+h2::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	height: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+h3 {
+	padding: .05em .75em;
+	border: 1px solid #ccc;
+	border-left: 4px;
+	background-color: #FFFAF0;
+	font-size:20px;
+}
+
+
+.select_1 select {
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+.shadow_box input
+{ -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.shadow_box textarea
+{ -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+
+.btn {background: #3498db;
+      border: 1px solid #DDD;
+      color: #FFF;
+      text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+      width: 100px;
+      padding: 10px 0;
+
+}

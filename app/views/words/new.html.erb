@@ -1,22 +1,69 @@
-<h1>New</h1>
-<p>TBD</p>
-<%= form_for @word do |f| %>
-   <div>
-     <%= f.text_field :japanese %>
-   </div>
-   <div>
-     <%= f.select :part_of_speech, Word.part_of_speeches.keys %>
-   </div>
-   <div>
-     <%= f.text_field :thai %>
-   </div>
-   <div>
-     <%= f.select :verbal_system, Word.verbal_systems.keys %>
-   </div>
-   <div>
-     <%= f.text_area :remarks %>
-   </div>
-   <div>
-      <%= f.submit "送信" %>
-   </div>
-<% end %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="utf8">
+      <title>新規登録</title>
+  </head>
+  <style>
+      body{ background: #FFFAF0;}
+  </style>
+      <body>
+        <header>
+          <h1>新規単語登録</h1>
+          <%= form_for @word do |f| %>
+          <link rel="stylesheet" href="thai.css">
+          <h3><p>ここでは新規の単語登録をすることができます。以下の項目を記入して[送信]を押してください。皆さんのご協力お待ちしております。より良いサイトをみなさんで作っていきましょう!</p></h2>
+        </header>
+    
+        <br>
+    
+        <article>
+            <h2>1. 日本語を入力してください</h2>
+            <div class="shadow_box">
+            <%= f.text_field :japanese , :size=>"25px" %>
+            </div>
+            </form>
+        </article>
+    
+        <article>
+            <h2>2. 品詞を選択してください</h2>
+            <div>
+            <%= f.select :part_of_speech, Word.part_of_speeches.keys %>
+            </div>
+            </form>
+        </article>
+    
+        <article>
+            <h2>3. タイ語を入力してください</h2>
+            <div class="shadow_box">
+            <%= f.text_field :thai , :size=>"25px" %>
+            </div>
+            </form>
+        </article>
+    
+        <article>
+            <h2>4. 口語,文語,もしくは口語/文語を選択してください。</h2>
+            <div >
+            <%= f.select :verbal_system, Word.verbal_systems.keys%>
+            </div>
+            </form>
+        </article>
+    
+        <article>
+            <h2>5. 備考があれば記入してください</h2>
+            <div class="shadow_box">
+            <%= f.text_area :remarks ,:size=>"40x3" ,:size=>"40px", :placeholder=>"特になければ未記入のままで構いません"%>
+            </div>  
+          </form>
+        </article>
+    
+        <br><br><br>
+    
+        <article>
+            <%= f.submit "送信", class: "btn" %> 
+        </article>
+         
+        <% end %>
+          
+       </body>
+ </html>
