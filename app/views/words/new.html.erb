@@ -22,7 +22,7 @@
             <div class="shadow_box">
             <%= f.text_field :japanese , :size=>"25px" %>
             </div>
-            </form>
+            
         </article>
     
         <article>
@@ -30,7 +30,7 @@
             <div>
             <%= f.select :part_of_speech, Word.part_of_speeches.keys %>
             </div>
-            </form>
+            
         </article>
     
         <article>
@@ -38,7 +38,7 @@
             <div class="shadow_box">
             <%= f.text_field :thai , :size=>"25px" %>
             </div>
-            </form>
+            
         </article>
     
         <article>
@@ -46,7 +46,7 @@
             <div >
             <%= f.select :verbal_system, Word.verbal_systems.keys%>
             </div>
-            </form>
+            
         </article>
     
         <article>
@@ -54,13 +54,13 @@
             <div class="shadow_box">
             <%= f.text_area :remarks ,:size=>"40x3" ,:size=>"40px", :placeholder=>"特になければ未記入のままで構いません"%>
             </div>  
-          </form>
+          
         </article>
     
         <br><br><br>
     
         <article>
-            <%= f.submit "送信", class: "btn" %> 
+            <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block" %> 
         </article>
          
         <% end %>
