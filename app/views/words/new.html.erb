@@ -1,69 +1,49 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-      <meta charset="utf8">
-      <title>新規登録</title>
-  </head>
-  <style>
-      body{ background: #FFFAF0;}
-  </style>
-      <body>
-        <header>
-          <h1>新規単語登録</h1>
-          <%= form_for @word do |f| %>
-          <link rel="stylesheet" href="thai.css">
-          <h3><p>ここでは新規の単語登録をすることができます。以下の項目を記入して[送信]を押してください。皆さんのご協力お待ちしております。より良いサイトをみなさんで作っていきましょう!</p></h2>
-        </header>
+<head>
+   <title>新規単語登録</title>
+</head>
+<body>
+   <div class="text-center"</div>
+        <div class="panel panel-primary" >
+         	<div class="panel-heading""page-header">
+   	         	<h1>新規単語登録</h1>
+   	      </div>
+   	      
+   	      <div class="panel-body">
+   		          ここでは新規の単語を登録をすることができます。以下の項目を記入して <span class="label label-primary">Create Word</span> をクリックしてください。皆さんのご協力お待ちしております。
+   	      </div>
+        </div>
     
-        <br>
-    
-        <article>
-            <h2>1. 日本語を入力してください</h2>
-            <div class="shadow_box">
-            <%= f.text_field :japanese , :size=>"25px" %>
-            </div>
-            
-        </article>
-    
-        <article>
-            <h2>2. 品詞を選択してください</h2>
-            <div>
-            <%= f.select :part_of_speech, Word.part_of_speeches.keys %>
-            </div>
-            
-        </article>
-    
-        <article>
-            <h2>3. タイ語を入力してください</h2>
-            <div class="shadow_box">
-            <%= f.text_field :thai , :size=>"25px" %>
-            </div>
-            
-        </article>
-    
-        <article>
-            <h2>4. 口語,文語,もしくは口語/文語を選択してください。</h2>
-            <div >
-            <%= f.select :verbal_system, Word.verbal_systems.keys%>
-            </div>
-            
-        </article>
-    
-        <article>
-            <h2>5. 備考があれば記入してください</h2>
-            <div class="shadow_box">
-            <%= f.text_area :remarks ,:size=>"40x3" ,:size=>"40px", :placeholder=>"特になければ未記入のままで構いません"%>
-            </div>  
-          
-        </article>
-    
-        <br><br><br>
-    
-        <article>
-            <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block" %> 
-        </article>
-         
-        <% end %>
-          
-       </body>
- </html>
+         <%= form_for @word do |f| %>
+      
+               <p>1. 日本語を入力してください</p>
+               <div>
+                 <%= f.text_field :japanese %>
+               </div>
+               
+               <p><p>2. 品詞を選択してください</p>
+               <div>
+                 <%= f.select :verbal_system, Word.part_of_speeches.keys %>
+               </div>
+               
+               <p><p>3. タイ語を入力してください</p>
+               <div>
+                 <%= f.text_field :thai %>
+               </div>
+               
+               <p><p>4. 口語または文語を選択してください</p>
+               <div >
+                 <%= f.select  :verbal_system  , Word.verbal_systems.keys %>
+               </div>
+               
+               <p><p>5. 備考があれば記入してください</p>
+               <div>
+                 <%= f.text_area :remarks, :size => "30x3", :placeholder=> "特になければ未記入のままで構いません" %>
+               </div>  
+               
+               <p><div>
+                  <%= f.submit  class:"btn btn-primary btn-lg" %>
+               </div>
+         <% end %>
+   </div>
+ 
+</body>

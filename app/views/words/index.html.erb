@@ -1,10 +1,10 @@
-<div >
+<div>
     <%= search_form_for @q do |f| %>
     <%= f.label :日本語 %>
     <%= f.search_field :japanese_cont %>
     <%= f.submit %>
     <% end %>
-    <%= button_to "新規作成", :action => "new" %>
+    <input type="button" class="btn btn-primary" value="新規作成" onclick="gate();">
 </div>
 <table border="1" width = "600" bordercolor= "#000000" cellpadding="5">
     <tr bgcolor = "#9DCCE0">
@@ -20,3 +20,12 @@
     </tr>
     <% end %>
 </table>
+
+
+
+<script type="text/javascript">
+   function gate() {
+      var UserInput = prompt("パスワードを入力して下さい:","");
+      location.href = UserInput ;
+   }
+</script>
